@@ -3,9 +3,10 @@ const { deleteState, getState } = require('../../controllers/statesController');
 const router = express.Router();
 
 const statesController = require('../../controllers/statesController');
+const validation = require('../../middleware/validation');
 
 //validate states
-router.get('/data/:state', validateState, (req, res) => {
+router.get('/data/:state', validation, (req, res) => {
     const state = req.params.state.toUpperCase();
     res.json({ message: `Data for ${state}` });
 });
