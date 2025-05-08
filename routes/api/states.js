@@ -4,7 +4,13 @@ const router = express.Router();
 
 const statesController = require('../../controllers/statesController');
 
-//http methods
+//validate states
+router.get('/data/:state', validateState, (req, res) => {
+    const state = req.params.state.toUpperCase();
+    res.json({ message: `Data for ${state}` });
+});
+
+
 router.route('/')
 .get(statesController.getAllStates);
 
