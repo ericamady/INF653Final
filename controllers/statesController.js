@@ -77,7 +77,7 @@ const addNewFact = async (req, res) => {
   }
 
   if (!Array.isArray(funfacts) || funfacts.length === 0 || !funfacts.every(f => typeof f === 'string')) {
-    return res.status(400).json({ message: 'Funfacts must be a non-empty array of strings or a single string.' });
+    return res.status(400).json({ message: 'State fun facts value required' });
   }
 
   try {
