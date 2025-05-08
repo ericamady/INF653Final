@@ -3,46 +3,41 @@ const { deleteState, getState } = require('../../controllers/statesController');
 const router = express.Router();
 
 const statesController = require('../../controllers/statesController');
-const validation = require('../../middleware/validation');
-
-//validate states
-router.get('/states/:state', validation, (req, res) => {
-    const state = req.params.state.toUpperCase();
-    res.json({ message: `Data for ${state}` });
-});
+const verifyStates = require('../../middleware/verifyStates');
 
 
+
+//get all states
 router.route('/')
 .get(statesController.getAllStates);
 
 
-
-router.route('/:state/funfact')
-//How to update
-.get(statesController.getFunfact)
-.post(statesController.addNewFact)
-.patch(statesController.updateFact)
-.delete(statesController.deleteFact);
-
-
-
+//get one state
 router.route('/:state')
-//How to update
+    .get(verifyStates, statesController.getState);
+
+//get capital
+router.route('/:state/capital')
+    .get(verifyStates, statesController.getCapital);
+
+// get admission date
+router.route('/:state/admission')
+    .get(verifyStates, statesController.getAdmission);
+
+//Get, patch and delete funfacts
+router.route('/:state/funfact')
+.get(verifyStates, statesController.getFunfact)
+.post(verifyStates, statesController.addNewFact)
+.patch(verifyStates, statesController.updateFact)
+.delete(verifyStates, statesController.deleteFact);
+
+//get filter
+router.route('/:state/:field')
+    .get(verifyStates, statesController.getParamDetail);
 
 
 
-//get request in url
-router.route('/:id')
-    .get(statesController.getState);
-
-    router.route('/:code/capital')
-    .get(statesController.getCapital);
-
-    router.route('/:code/admission')
-    .get(statesController.getAdmission);
-
-router.route('/:id/:field')
-    .get(statesController.getParamDetail);
+    
 
 
 module.exports = router;
