@@ -6,7 +6,7 @@ const statesController = require('../../controllers/statesController');
 const validation = require('../../middleware/validation');
 
 //validate states
-router.get('/data/:state', validation, (req, res) => {
+router.get('/states/:state', validation, (req, res) => {
     const state = req.params.state.toUpperCase();
     res.json({ message: `Data for ${state}` });
 });

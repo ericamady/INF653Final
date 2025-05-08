@@ -261,3 +261,6 @@
 250507	22:20:03	0aeb6c87-27ae-44c8-a9b4-a548eecad376	GET	undefined	/states/GA/funfact
 250507	22:20:11	1358bbc9-ec7e-4e44-a280-529602cbc4bd	GET	undefined	/states/MA/funfact
 250507	22:20:19	2e42c716-a57b-49b4-9fc2-0f44d8dadb08	GET	undefined	/states/GA/funfact
+250507	22:48:23	c0074c8b-842d-41ee-a71e-2c35803f2133	GET	undefined	/states
+250507	22:48:23	e1c216cc-675a-45d2-976c-184d212dfce9	GET	undefined	/favicon.ico
+250507	22:48:35	060c7b13-2a74-4a61-9d57-782274114122	GET	undefined	/states/CO

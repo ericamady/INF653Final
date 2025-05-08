@@ -17,7 +17,7 @@ connectDB();
 //custom middleware logger
 app.use(logger);
 
-app.use(cors());
+app.use(cors(corsOptions));
 
 //built-in middleware to handle url encoded data
 //in other words, form data:

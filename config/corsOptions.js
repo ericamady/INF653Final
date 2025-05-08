@@ -1,10 +1,5 @@
 
-
-const whitelist = [
-    'https://www.google.com', 
-    'http://127.0.0.1:5500', 
-    'http://localhost:3500'
-];
+const allowedOrigins = require('./corsOptions.js');
 
 const corsOptions = {
     origin: (origin, callback) =>{
