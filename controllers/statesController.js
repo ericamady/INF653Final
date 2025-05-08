@@ -237,7 +237,7 @@ const getParamDetail = async (req, res) => {
     return res.status(404).json({ message: `No such field '${field}' for state ${code}` });
   }
 
-  return res.json({ state:code,  [field]: stateJson[field] });
+  return res.json({ state: stateJson.state,  [field]: stateJson[field] });
 };
 
 // get the capital
