@@ -236,7 +236,10 @@ const getParamDetail = async (req, res) => {
   if (!stateJson[field]) {
     return res.status(404).json({ message: `No such field '${field}' for state ${code}` });
   }
-
+let fieldValue = stateJson[field];
+if (field === 'population' && typeof fieldValue === 'number') {
+  fieldValue = fieldValue.toLocaleString();  // Adds commas like 10,123,456
+}
   return res.json({ state: stateJson.state,  [field]: stateJson[field] });
 };
 
