@@ -1,0 +1,5 @@
+250414	19:29:26	31697ec1-cb85-4fa0-9d36-9b62beebc774	TypeError: fsPromises.readFil is not a function
+250419	21:30:51	818dfefe-71a5-4422-97de-095b959091fc	TypeError: data.employees.find is not a function
+250419	21:33:30	17569143-6f14-4477-8051-014c550b86a2	TypeError: data.employees.find is not a function
+250506	20:19:45	800b6796-630b-4fdd-bb0c-3cfa88cd3db1	SyntaxError: Expected ':' after property name in JSON at position 106 (line 2 column 43)
+250507	16:27:29	d32984d4-80cd-473b-bbcf-53f24963e4e0	SyntaxError: Expected ',' or '}' after property value in JSON at position 17 (line 2 column 5)
