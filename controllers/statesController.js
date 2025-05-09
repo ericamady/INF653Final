@@ -6,7 +6,7 @@ const getFunfact = async (req, res) => {
   try {
     const stateCode = req.code; 
 const stateJson = statesData.find(state => state.code === stateCode);
-const stateName = stateJson ? stateJson.name : stateCode;
+const stateName = stateJson ? stateJson.state : stateCode;
     // Search MongoDB for a matching state
     const stateData = await State.findOne({ stateCode });
 
